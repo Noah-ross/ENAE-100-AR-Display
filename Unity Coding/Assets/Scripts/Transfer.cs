@@ -3,37 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
 using SensorUnity = RosMessageTypes.Sensor.JointStateMsg;
-using testMessage = RosMessageTypes.Std.StringMsg;
 
 
 public class Transfer : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private string rosTopic = "/nbv/joint_states";
-    [SerializeField] private string newTopic = "balls";
-    [SerializeField] private ROSConnection ROS;
-    [SerializeField] private ArticulationBody[] robotJoints = new ArticulationBody[9];
+    public string rosTopic = "nbv/joint_states";
+    private ROSConnection ROS;
+    private ArticulationBody[] robotJoints = new ArticulationBody[6];
+    public GameObject robot;
+
     void Start()
     {
+        robotJoints = robot.GetComponentsInChildren<ArticulationBody>();git
         ROSConnection ROS = ROSConnection.GetOrCreateInstance();
-        ROS.Subscribe<testMessage>(newTopic, test);
+        ROS.Subscribe<SensorUnity>(rosTopic, GetJointPositions);
     }
 
-    private void test(testMessage message)
+
+    private void GetJointPositions(SensorUnity message)
     {
-        print(message.data);
+        for (int i = 0; i < message.name.Length; i++)
+        {
+            var joint1XDrive = robotJoints[i].xDrive;
+            joint1XDrive.target = (float)(message.position[i]) * Mathf.Rad2Deg;
+            robotJoints[i].xDrive = joint1XDrive;
+        }
     }
 
-    private void GetJointPositions(SensorUnity sensorMsg)
-    {
-        StartCoroutine(SetJointValues(sensorMsg));
-    }
-    IEnumerator SetJointValues(SensorUnity message)
-    {
-        print(message.position[0]);
- 
-        yield return new WaitForSeconds(0.5f);
-    }
  
     public void UnSub()
     {
