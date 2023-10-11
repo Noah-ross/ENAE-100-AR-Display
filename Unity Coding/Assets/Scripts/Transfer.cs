@@ -10,12 +10,12 @@ public class Transfer : MonoBehaviour
     // Start is called before the first frame update
     public string rosTopic = "nbv/joint_states";
     private ROSConnection ROS;
-    private ArticulationBody[] robotJoints = new ArticulationBody[6];
+    private ArticulationBody[] robotJoints;
     public GameObject robot;
 
     void Start()
     {
-        robotJoints = robot.GetComponentsInChildren<ArticulationBody>();git
+        robotJoints = robot.GetComponentsInChildren<ArticulationBody>();
         ROSConnection ROS = ROSConnection.GetOrCreateInstance();
         ROS.Subscribe<SensorUnity>(rosTopic, GetJointPositions);
     }
@@ -23,10 +23,10 @@ public class Transfer : MonoBehaviour
 
     private void GetJointPositions(SensorUnity message)
     {
-        for (int i = 0; i < message.name.Length; i++)
+        for (int i = 1; i < message.name.Length + 1; i++)
         {
             var joint1XDrive = robotJoints[i].xDrive;
-            joint1XDrive.target = (float)(message.position[i]) * Mathf.Rad2Deg;
+            joint1XDrive.target = (float)(message.position[i-1]) * Mathf.Rad2Deg;
             robotJoints[i].xDrive = joint1XDrive;
         }
     }
