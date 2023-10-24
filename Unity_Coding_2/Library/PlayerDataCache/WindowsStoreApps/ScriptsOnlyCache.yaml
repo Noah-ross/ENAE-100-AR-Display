@@ -1,7 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Texter
     - Transfer
+    - mover
+    Microsoft.MixedReality.OpenXR.Editor.dll:
+    - Microsoft.MixedReality.OpenXR.Editor.PlayModeRemotingPluginInspector
+    - Microsoft.MixedReality.OpenXR.Editor.RemotingSettingsInspector
     Microsoft.MixedReality.OpenXR.dll:
     - Microsoft.MixedReality.OpenXR.HPMixedRealityControllerProfile
     - Microsoft.MixedReality.OpenXR.HandTrackingFeaturePlugin
@@ -9,14 +14,75 @@ ScriptsOnlyBuild:
     - Microsoft.MixedReality.OpenXR.MotionControllerFeaturePlugin
     - Microsoft.MixedReality.OpenXR.Remoting.AppRemotingPlugin
     - Microsoft.MixedReality.OpenXR.Remoting.PlayModeRemotingPlugin
+    Microsoft.MixedReality.Toolkit.Editor.Inspectors.dll:
+    - Microsoft.MixedReality.Toolkit.Editor.MixedRealityToolkitConfigurationProfileInspector
     Microsoft.MixedReality.Toolkit.Editor.Utilities.dll:
     - Microsoft.MixedReality.Toolkit.Utilities.Editor.ProjectPreferences
+    Microsoft.MixedReality.Toolkit.Providers.OpenXR.dll:
+    - Microsoft.MixedReality.Toolkit.XRSDK.OpenXR.OpenXRCameraSettingsProfile
+    Microsoft.MixedReality.Toolkit.Providers.WindowsMixedReality.Shared.dll:
+    - Microsoft.MixedReality.Toolkit.WindowsMixedReality.WindowsMixedRealityCameraSettingsProfile
+    Microsoft.MixedReality.Toolkit.Providers.XRSDK.Oculus.dll:
+    - Microsoft.MixedReality.Toolkit.XRSDK.Oculus.Input.OculusXRSDKDeviceManagerProfile
+    Microsoft.MixedReality.Toolkit.SDK.dll:
+    - Microsoft.MixedReality.Toolkit.Input.AnimatedCursor
+    - Microsoft.MixedReality.Toolkit.Input.FingerCursor
+    - Microsoft.MixedReality.Toolkit.Input.GGVPointer
+    - Microsoft.MixedReality.Toolkit.Input.MeshCursor
+    - Microsoft.MixedReality.Toolkit.Input.MousePointer
+    - Microsoft.MixedReality.Toolkit.Input.PokePointer
+    - Microsoft.MixedReality.Toolkit.Input.RiggedHandVisualizer
+    - Microsoft.MixedReality.Toolkit.Input.ShellHandRayPointer
+    - Microsoft.MixedReality.Toolkit.Input.SpherePointer
+    - Microsoft.MixedReality.Toolkit.Input.SpherePointerGrabPoint
+    - Microsoft.MixedReality.Toolkit.Input.SpherePointerVisual
+    - Microsoft.MixedReality.Toolkit.Input.TouchPointer
+    - Microsoft.MixedReality.Toolkit.Input.WindowsMixedRealityControllerVisualizer
+    - Microsoft.MixedReality.Toolkit.Teleport.ParabolicTeleportPointer
+    - Microsoft.MixedReality.Toolkit.Teleport.TeleportCursor
+    Microsoft.MixedReality.Toolkit.Services.InputAnimation.dll:
+    - Microsoft.MixedReality.Toolkit.Input.MixedRealityInputRecordingProfile
+    Microsoft.MixedReality.Toolkit.Services.InputSimulation.dll:
+    - Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSimulationProfile
+    Microsoft.MixedReality.Toolkit.dll:
+    - Microsoft.MixedReality.Toolkit.Boundary.MixedRealityBoundaryVisualizationProfile
+    - Microsoft.MixedReality.Toolkit.Diagnostics.MixedRealityDiagnosticsProfile
+    - Microsoft.MixedReality.Toolkit.Input.BaseHandVisualizer
+    - Microsoft.MixedReality.Toolkit.Input.MixedRealityControllerMappingProfile
+    - Microsoft.MixedReality.Toolkit.Input.MixedRealityControllerVisualizationProfile
+    - Microsoft.MixedReality.Toolkit.Input.MixedRealityGesturesProfile
+    - Microsoft.MixedReality.Toolkit.Input.MixedRealityHandTrackingProfile
+    - Microsoft.MixedReality.Toolkit.Input.MixedRealityInputActionRulesProfile
+    - Microsoft.MixedReality.Toolkit.Input.MixedRealityInputActionsProfile
+    - Microsoft.MixedReality.Toolkit.Input.MixedRealityInputSystemProfile
+    - Microsoft.MixedReality.Toolkit.Input.MixedRealityPointerProfile
+    - Microsoft.MixedReality.Toolkit.Input.MixedRealitySpeechCommandsProfile
+    - Microsoft.MixedReality.Toolkit.MixedRealityCameraProfile
+    - Microsoft.MixedReality.Toolkit.MixedRealityExperienceSettingsProfile
+    - Microsoft.MixedReality.Toolkit.MixedRealityRegisteredServiceProvidersProfile
+    - Microsoft.MixedReality.Toolkit.MixedRealityToolkitConfigurationProfile
+    - Microsoft.MixedReality.Toolkit.Physics.DistorterGravity
+    - Microsoft.MixedReality.Toolkit.SceneSystem.MixedRealitySceneSystemProfile
+    - Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessMeshObserverProfile
+    - Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessSystemProfile
+    - Microsoft.MixedReality.Toolkit.Utilities.BezierDataProvider
+    - Microsoft.MixedReality.Toolkit.Utilities.BezierInertia
+    - Microsoft.MixedReality.Toolkit.Utilities.HoverLight
+    - Microsoft.MixedReality.Toolkit.Utilities.MixedRealityLineRenderer
+    - Microsoft.MixedReality.Toolkit.Utilities.ParabolaPhysicalLineDataProvider
+    - Microsoft.MixedReality.Toolkit.Utilities.ProximityLight
+    - Microsoft.MixedReality.Toolkit.Utilities.SimpleLineDataProvider
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.Robotics.ROSTCPConnector.Editor.dll:
+    - Unity.Robotics.ROSTCPConnector.Editor.ROSSettingsEditor
+    Unity.Robotics.ROSTCPConnector.dll:
+    - Unity.Robotics.ROSTCPConnector.ROSConnection
+    - Unity.Robotics.ROSTCPConnector.ROSGeometry.GeometryCompass
     Unity.Robotics.UrdfImporter.dll:
     - Unity.Robotics.UrdfImporter.UrdfCollision
     - Unity.Robotics.UrdfImporter.UrdfCollisions
@@ -73,10 +139,8 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
-    UnityEngine.SpatialTracking.dll:
-    - UnityEngine.SpatialTracking.TrackedPoseDriver
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/AE100.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -97,6 +161,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
@@ -105,42 +171,50 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
+    - Class: 102
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2374}
+      Script: {instanceID: 1764}
     - Class: 114
-      Script: {instanceID: 2696}
+      Script: {instanceID: 2400}
     - Class: 114
-      Script: {instanceID: 4770}
+      Script: {instanceID: 2722}
     - Class: 114
-      Script: {instanceID: 5118}
+      Script: {instanceID: 4796}
     - Class: 114
-      Script: {instanceID: 5132}
+      Script: {instanceID: 5094}
     - Class: 114
-      Script: {instanceID: 6032}
+      Script: {instanceID: 5144}
     - Class: 114
-      Script: {instanceID: 7042}
+      Script: {instanceID: 5158}
     - Class: 114
-      Script: {instanceID: 7190}
+      Script: {instanceID: 6058}
     - Class: 114
-      Script: {instanceID: 7198}
+      Script: {instanceID: 7068}
     - Class: 114
-      Script: {instanceID: 7222}
+      Script: {instanceID: 7216}
     - Class: 114
-      Script: {instanceID: 7892}
+      Script: {instanceID: 7224}
     - Class: 114
-      Script: {instanceID: 8018}
+      Script: {instanceID: 7248}
     - Class: 114
-      Script: {instanceID: 8560}
+      Script: {instanceID: 8044}
     - Class: 114
-      Script: {instanceID: 9194}
+      Script: {instanceID: 8586}
     - Class: 114
-      Script: {instanceID: 9442}
+      Script: {instanceID: 8982}
     - Class: 114
-      Script: {instanceID: 21910}
+      Script: {instanceID: 9222}
+    - Class: 114
+      Script: {instanceID: 9470}
+    - Class: 114
+      Script: {instanceID: 35514}
+    - Class: 114
+      Script: {instanceID: 36478}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2668,6 +2742,12 @@ ScriptsOnlyBuild:
     className: MultiplayerEventSystem
   - hash:
       serializedVersion: 2
+      Hash: 6c40e9fec78a77a3aefb3303ff3e43ff
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Transfer
+  - hash:
+      serializedVersion: 2
       Hash: 72763ba72b43403ee09a4c54b07cb346
     assemblyName: Unity.InputSystem.dll
     namespaceName: UnityEngine.InputSystem.XR
@@ -2890,11 +2970,17 @@ ScriptsOnlyBuild:
     className: ControllerModelArticulator
   - hash:
       serializedVersion: 2
-      Hash: 6c40e9fec78a77a3aefb3303ff3e43ff
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Transfer
+    className: Texter
+  - hash:
+      serializedVersion: 2
+      Hash: c1105039ecc5ec862c78cc9ee776fdc1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: mover
   platform: 21
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/SPS/Desktop/App
+  - Assets/Scenes/AE100.unity
+  playerPath: C:/Users/SPS/Desktop/ENAE-100-AR-Display/Unity_Coding_2/App

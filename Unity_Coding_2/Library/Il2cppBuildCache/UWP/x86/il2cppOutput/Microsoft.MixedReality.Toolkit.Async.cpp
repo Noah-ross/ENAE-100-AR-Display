@@ -3410,6 +3410,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SyncContextUtility_Initialize_mA9A594DD1
 		return;
 	}
 }
+// System.Int32 Microsoft.MixedReality.Toolkit.Utilities.SyncContextUtility::get_UnityThreadId()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SyncContextUtility_get_UnityThreadId_m0610819F74D9A2A723F04F039FC495A257FC0D24 (const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&SyncContextUtility_t67C02C66674FBAB28C0B31C7A850990C58FEF5F6_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// public static int UnityThreadId { get; private set; }
+		int32_t L_0 = ((SyncContextUtility_t67C02C66674FBAB28C0B31C7A850990C58FEF5F6_StaticFields*)il2cpp_codegen_static_fields_for(SyncContextUtility_t67C02C66674FBAB28C0B31C7A850990C58FEF5F6_il2cpp_TypeInfo_var))->get_U3CUnityThreadIdU3Ek__BackingField_0();
+		return L_0;
+	}
+}
 // System.Void Microsoft.MixedReality.Toolkit.Utilities.SyncContextUtility::set_UnityThreadId(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SyncContextUtility_set_UnityThreadId_m231D653E98588D2AEFBAC9AB39C3DE1E051C9AF2 (int32_t ___value0, const RuntimeMethod* method)
 {
@@ -3455,6 +3470,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SyncContextUtility_set_UnitySynchronizat
 		SynchronizationContext_t17D9365B5E0D30A0910A16FA4351C525232EF069 * L_0 = ___value0;
 		((SyncContextUtility_t67C02C66674FBAB28C0B31C7A850990C58FEF5F6_StaticFields*)il2cpp_codegen_static_fields_for(SyncContextUtility_t67C02C66674FBAB28C0B31C7A850990C58FEF5F6_il2cpp_TypeInfo_var))->set_U3CUnitySynchronizationContextU3Ek__BackingField_1(L_0);
 		return;
+	}
+}
+// System.Boolean Microsoft.MixedReality.Toolkit.Utilities.SyncContextUtility::get_IsMainThread()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SyncContextUtility_get_IsMainThread_m9A9897ED73F436F51C35A2CF72790FEABBF1F767 (const RuntimeMethod* method)
+{
+	{
+		// public static bool IsMainThread => UnitySynchronizationContext == SynchronizationContext.Current;
+		SynchronizationContext_t17D9365B5E0D30A0910A16FA4351C525232EF069 * L_0;
+		L_0 = SyncContextUtility_get_UnitySynchronizationContext_mDD47402570DDBD46671F70F77C1362B9EE1BBB94_inline(/*hidden argument*/NULL);
+		SynchronizationContext_t17D9365B5E0D30A0910A16FA4351C525232EF069 * L_1;
+		L_1 = SynchronizationContext_get_Current_m4841CFFADFD0F0D82CE91800EE1225926440B942(/*hidden argument*/NULL);
+		return (bool)((((RuntimeObject*)(SynchronizationContext_t17D9365B5E0D30A0910A16FA4351C525232EF069 *)L_0) == ((RuntimeObject*)(SynchronizationContext_t17D9365B5E0D30A0910A16FA4351C525232EF069 *)L_1))? 1 : 0);
 	}
 }
 #ifdef __clang__
