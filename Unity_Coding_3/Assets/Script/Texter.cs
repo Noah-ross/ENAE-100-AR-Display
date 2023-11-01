@@ -13,6 +13,7 @@ public class Texter : MonoBehaviour
     int number;
     private float[] efforts;
     TextMesh texting;
+    public TextMesh warning;
     // Start is called before the first frame update
     void Start()
     {
