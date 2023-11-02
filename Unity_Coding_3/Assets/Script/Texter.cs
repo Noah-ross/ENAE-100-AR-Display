@@ -27,22 +27,20 @@ public class Texter : MonoBehaviour
     // Update is called once per frame
     void GetJointEffort(SensorUnity message)
     {
-        for (int i = 1; i < message.effort.Length; i++)
+        for (int i = 0; i < message.effort.Length; i++)
         {
-            
-            efforts[i-1] = (float)(message.effort[i]);
+            efforts[i] = (float)(message.effort[i]);
         }
     
     }
 
     void PrintJointEfforts()
     {
-        while(true)
-        {
+        
             string temp = "";
-            for (int i = 0; i < efforts.Length - 1; i++)
+            for (int i = 0; i < efforts.Length; i++)
             {
-                if(i == efforts.Length - 2)
+                if(i == efforts.Length - 1)
                 {
                     temp += efforts[i].ToString();
                 }
@@ -53,6 +51,23 @@ public class Texter : MonoBehaviour
             }
             texting.text = temp; //print string of array to unity
         }
+
+    void OnGUI()
+    {
+        for (int i = 0; i < efforts.Length; i++)
+        {
+            if (efforts[i] >= 0.03 || efforts[i] <= -0.03)
+            {
+                GUI.color = Color.red;
+                //GUI.Box(new Rect(Screen.width/2 - 600, Screen.height/2 - 400, 2400, 800), "WARNING! HIGH EFFORT!");
+                GUI.Box(new Rect(Screen.width/2, Screen.height/2,1000,1000), "WARNING! HIGH EFFORT!");
+
+            }
+        }
+    }
         
+    void Update()
+    {
+        PrintJointEfforts();
     }
 }
