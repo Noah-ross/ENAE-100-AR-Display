@@ -14,6 +14,8 @@ public class Texter : MonoBehaviour
     private float[] efforts;
     TextMesh texting;
     public TextMesh warning;
+    warning.text = "WARNING! HIGH EFFORT!";
+    warning.SetActive(false);
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,15 @@ public class Texter : MonoBehaviour
         for (int i = 0; i < message.effort.Length; i++)
         {
             efforts[i] = (float)(message.effort[i]);
+            //warning message
+            if (efforts[i] >= 0.03 || efforts[i] <= -0.03)
+            {
+                warning.SetActive(true);
+            }
+            else
+            {
+                warning.SetActive(false);
+            }
         }
     
     }
@@ -51,20 +62,6 @@ public class Texter : MonoBehaviour
             }
             texting.text = temp; //print string of array to unity
         }
-
-    void OnGUI()
-    {
-        for (int i = 0; i < efforts.Length; i++)
-        {
-            if (efforts[i] >= 0.03 || efforts[i] <= -0.03)
-            {
-                GUI.color = Color.red;
-                //GUI.Box(new Rect(Screen.width/2 - 600, Screen.height/2 - 400, 2400, 800), "WARNING! HIGH EFFORT!");
-                GUI.Box(new Rect(Screen.width/2, Screen.height/2,1000,1000), "WARNING! HIGH EFFORT!");
-
-            }
-        }
-    }
         
     void Update()
     {
