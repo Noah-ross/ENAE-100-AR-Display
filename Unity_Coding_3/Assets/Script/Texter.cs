@@ -13,9 +13,8 @@ public class Texter : MonoBehaviour
     int number;
     private float[] efforts;
     TextMesh texting;
-    public TextMesh warning;
-    warning.text = "WARNING! HIGH EFFORT!";
-    warning.SetActive(false);
+    public GameObject warning;
+    TextMesh warningText;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +23,9 @@ public class Texter : MonoBehaviour
         robotJoints = robot.GetComponentsInChildren<ArticulationBody>();
         ROSConnection ROS = ROSConnection.GetOrCreateInstance();
         ROS.Subscribe<SensorUnity>(rosTopic, GetJointEffort);
+        warningText = warning.GetComponent<TextMesh>();
+        warningText.text = "WARNING! HIGH EFFORT!";
+        warning.SetActive(false);
     }
 
     // Update is called once per frame
