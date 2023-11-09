@@ -1,4 +1,0 @@
-assimp.dll
-
-
-openxr_loader.dll
